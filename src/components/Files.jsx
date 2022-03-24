@@ -16,7 +16,7 @@ const Files = () => {
 
   const displayAll = () =>{
     const arr =[];
-    const listRef =  ref(storage,`${uid}`);
+    const listRef =  ref(storage,`${uid}/docs`);
     listAll(listRef).then((res)=>{
       res.items.forEach((itemRef)=>{
         arr.push(itemRef)

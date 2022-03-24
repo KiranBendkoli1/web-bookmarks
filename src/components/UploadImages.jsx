@@ -7,13 +7,13 @@ import { useAuthState } from "react-firebase-hooks/auth";
 import {ref, uploadBytesResumable} from "firebase/storage";
 
 
-const UploadFiles = () => {
+const UploadImages = () => {
   const [file, setFile] = useState("");
   const navigate = useNavigate();
   const [user, loading] = useAuthState(auth);
   const uploadF = (user, file) => {
     if (file == null) return;
-    let fileRef = ref(storage, `${user.uid}/docs/${file.name}`)
+    let fileRef = ref(storage, `${user.uid}/images/${file.name}`)
 
     const uploadTask = uploadBytesResumable(fileRef,file);
 
@@ -39,12 +39,13 @@ const UploadFiles = () => {
       >
         <Card className="shadow" style={{ width: "500px", borderRadius: "5%" }}>
           <Card.Body>
-            <h2 className="text-center  mb-4">Upload File</h2>
+            <h2 className="text-center  mb-4">Upload Image</h2>
             <Form>
               <Form.Group>
                 <Form.Label>Select File</Form.Label>
                 <Form.Control
                   type="file"
+                  accept="image/*"
                   onChange={(e) => setFile(e.target.files[0])}
                   required
                 ></Form.Control>
@@ -68,4 +69,4 @@ const UploadFiles = () => {
   );
 };
 
-export default UploadFiles;
+export default UploadImages;
