@@ -1,17 +1,16 @@
 import React, { useEffect, useState } from "react";
 import { Card, Container, Button, Form } from "react-bootstrap";
 import { useNavigate } from "react-router";
-import { auth } from "../firebase";
+import { auth,storage } from "../firebase";
 import ReactNav from "./ReactNav";
 import { useAuthState } from "react-firebase-hooks/auth";
 import {ref, uploadBytesResumable} from "firebase/storage";
-import {storage} from "../firebase"
 
 
 const UploadFiles = () => {
   const [file, setFile] = useState("");
   const navigate = useNavigate();
-  const [user, loading, error] = useAuthState(auth);
+  const [user, loading] = useAuthState(auth);
   const uploadF = (user, file) => {
     if (file == null) return;
     

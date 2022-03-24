@@ -4,8 +4,10 @@ import MyCard from "./MyCard";
 import ReactNav from "./ReactNav";
 import { useNavigate } from "react-router";
 import { useAuthState } from "react-firebase-hooks/auth";
+import {IoMdAdd} from "react-icons/io"
 import { getDocs, collection } from "firebase/firestore";
-const Home = () => {
+import { Container, Button, lightColors, darkColors } from "react-floating-action-button";
+const LinksPage = () => {
   var uid;
   const [user, loading, error] = useAuthState(auth);
   const navigate = useNavigate();
@@ -24,27 +26,33 @@ const Home = () => {
     querySnapshot.forEach((doc) => {
       linksarr.push(doc.data());
     });
-    setLinks(linksarr)
-    
+    setLinks(linksarr);
   };
   useEffect(() => {
     Fetchdata();
-    
   }, []);
 
   return (
     <>
       <ReactNav />
-      
+
       <div className="container mt-5">
-        {
-          links.map(data=>{
-            return <MyCard data={data}/>
-          })
-        }  
+        {links.map((data) => {
+          return <MyCard data={data} />;
+        })}
       </div>
+      <Container>
+      <Button
+        tooltip="Press this button to add links"
+        rotate={true}
+        styles={{backgroundColor: darkColors.lighterBlue, color: lightColors.black}}
+        onClick={() => navigate("/ulinks")}
+      >
+        <IoMdAdd />
+      </Button>
+    </Container>
     </>
   );
 };
 
-export default Home;
+export default LinksPage;

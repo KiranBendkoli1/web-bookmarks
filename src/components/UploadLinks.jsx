@@ -4,7 +4,7 @@ import { useNavigate } from "react-router";
 import {auth,uploadLink} from "../firebase";
 import ReactNav from "./ReactNav";
 import {useAuthState} from 'react-firebase-hooks/auth';
-const Upload = () => {
+const UploadLinks = () => {
   const [link, setLink] = useState("");
   const navigate = useNavigate();
   const [user, loading, error] = useAuthState(auth);
@@ -50,4 +50,4 @@ const Upload = () => {
   );
 };
 
-export default Upload;
+export default UploadLinks;
