@@ -4,8 +4,8 @@ import MyCard from "./MyCard";
 import ReactNav from "./ReactNav";
 import { useNavigate } from "react-router";
 import { useAuthState } from "react-firebase-hooks/auth";
-import {IoMdAdd} from "react-icons/io"
-import { getDocs, collection } from "firebase/firestore";
+import {IoMdAdd} from "react-icons/io";
+import { getDocs, collection, doc, deleteDoc} from "firebase/firestore";
 import { Container, Button, lightColors, darkColors } from "react-floating-action-button";
 const LinksPage = () => {
   var uid;
@@ -20,11 +20,13 @@ const LinksPage = () => {
     }
   }, [auth]);
 
+  
   const Fetchdata = async () => {
     const linksarr = [];
     const querySnapshot = await getDocs(collection(db, "data" + uid));
     querySnapshot.forEach((doc) => {
-      linksarr.push(doc.data());
+      linksarr.push(doc);
+      console.log(doc)
     });
     setLinks(linksarr);
   };

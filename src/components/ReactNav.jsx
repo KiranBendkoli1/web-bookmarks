@@ -15,15 +15,15 @@ const ReactNav = () => {
   return (
     <Navbar  className="container shadow" bg="light" expand="lg" style={{borderRadius:"20px", marginTop:"10px", backgroundImage: "linear-gradient(to right, rgba(255,0,0,0),grey)"}}>
       <Container>
-        <Navbar.Brand >Bookmarks Web</Navbar.Brand>
+        <Navbar.Brand >Web Bookmarks </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
-            <Nav.Link ><Link className='nav-link' exact to="/home">Home</Link></Nav.Link>
-            <Nav.Link ><Link className='nav-link' exact to="/links">Links</Link></Nav.Link>
-            <Nav.Link ><Link className='nav-link' exact to="/docs">Documents</Link></Nav.Link>
-            <Nav.Link ><Link className='nav-link' exact to="/images">Images</Link></Nav.Link>
-            <Nav.Link ><Link className='nav-link' exact to="/about">About</Link></Nav.Link>
+            <Nav.Link ><Link activeClassName="menu_active" className='nav-link' exact to="/home">Home</Link></Nav.Link>
+            <Nav.Link ><Link activeClassName="menu_active" className='nav-link' exact to="/links">Links</Link></Nav.Link>
+            <Nav.Link ><Link activeClassName="menu_active" className='nav-link' exact to="/docs">Documents</Link></Nav.Link>
+            <Nav.Link ><Link activeClassName="menu_active" className='nav-link' exact to="/images">Images</Link></Nav.Link>
+            <Nav.Link ><Link activeClassName="menu_active" className='nav-link' exact to="/about">About</Link></Nav.Link>
           </Nav>
         </Navbar.Collapse>
         <Navbar.Collapse className="justify-content-end">

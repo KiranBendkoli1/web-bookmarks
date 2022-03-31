@@ -14,3 +14,7 @@ code {
 .nouse{
   color: aqua;
 }
+.menu_active{
+  color: blue;
+  border-bottom: 2px solid  var(--secondary-color);
+}

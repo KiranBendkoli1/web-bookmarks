@@ -10,37 +10,34 @@ const HomePage = () => {
       <ReactNav />
       <Container>
       <div className="row d-flex justify-content-center">
-        <Card  className="col-md-4" style={{ width: "18rem", margin:"10px" }}>
-          <AiOutlineLink  style={{width:"50px", height:"50px"}}/>
+        <Card  className="col-md-4" style={{ width: "18rem", margin:"10px",  }}>
+          <AiOutlineLink  style={{width:"50px", height:"50px",color:"blue"}}/>
           <Card.Body>
             <Card.Title>Links</Card.Title>
             <Card.Text>
-              Some quick example text to build on the card title and make up the
-              bulk of the card's content.
+              review your uploaded links and upload your links 
             </Card.Text>
             <Button ><Link exact to="/links" style={{color:"white", textDecoration:"none"}}>Go To Links</Link></Button>
           </Card.Body>
         </Card>
         <Card className="col-md-4"  style={{ width: "18rem", margin:"10px" }}>
-        <AiFillFilePdf style={{width:"50px", height:"50px"}}/>
+        <AiFillFilePdf style={{width:"50px", height:"50px",color:"red"}}/>
           <Card.Body>
             <Card.Title>Documents</Card.Title>
             <Card.Text>
-              Some quick example text to build on the card title and make up the
-              bulk of the card's content.
+              review your uploaded documents, upload new documents ,delete documents and download 
             </Card.Text>
-            <Button variant="primary"><Link exact to="/docs" style={{color:"white", textDecoration:"none"}}>Go To Documents</Link></Button>
+            <Button variant="primary"><Link exact to="/docs" style={{color:"white", textDecoration:"none"}}>Go To Docs</Link></Button>
           </Card.Body>
         </Card>
         <Card className="col-md-4"  style={{ width: "18rem", margin:"10px" }}>
-        <BsImageFill style={{width:"50px", height:"50px"}}/>
+        <BsImageFill style={{width:"50px", height:"50px",color:"violet"}}/>
           <Card.Body>
             <Card.Title>Images</Card.Title>
             <Card.Text>
-              Some quick example text to build on the card title and make up the
-              bulk of the card's content.
+              view uploaded images upload download and delete
             </Card.Text>
-            <Button variant="primary"><Link exact to="/images" style={{color:"white", textDecoration:"none"}}>Go To Images</Link></Button>
+            <Button ><Link exact to="/images" style={{color:"white", textDecoration:"none"}}>Go To Images</Link></Button>
           </Card.Body>
         </Card>
       </div>
