@@ -30,7 +30,7 @@ const MyCard = (props) => {
 
         <div style={{marginRight:"20px"}}>
         {
-          url.includes('http',0)?<a className='btn btn-sm btn-outline-primary' target="_blank" href={url} style={{borderRadius:"15px"}}><MdOutlineLaunch/></a>:<Link  className='btn btn-sm btn-outline-primary' target="_blank" to={`//${url}`} style={{borderRadius:"15px"}}>Launch</Link>
+          url.includes('http',0)?<a className='btn btn-sm btn-outline-primary' target="_blank" href={url} style={{borderRadius:"15px"}}><MdOutlineLaunch/></a>:<Link  className='btn btn-sm btn-outline-primary' target="_blank" to={`//${url}`} style={{borderRadius:"15px"}}><MdOutlineLaunch/></Link>
         }
         <a className='btn btn-sm btn-outline-danger' onClick={()=>deleteData(props.data)} style={{borderRadius:"15px"}}><MdDeleteOutline/>
         </a>
