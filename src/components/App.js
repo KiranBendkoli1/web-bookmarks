@@ -10,6 +10,9 @@ import Files from "./Files";
 import Images from "./Images";
 import HomePage from "./HomePage";
 import LinksPage from "./LinksPage";
+
+import "./App.css";
+
 function App() {
   return (
     <div className="App">

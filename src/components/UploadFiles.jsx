@@ -8,6 +8,7 @@ import {ref, uploadBytesResumable} from "firebase/storage";
 
 
 const UploadFiles = () => {
+  const myStyle ={"background":"-webkit-linear-gradient(#eee, rgb(2, 171, 244))","WebkitBackgroundClip":"text","WebkitTextFillColor":"transparent"}
   const [file, setFile] = useState("");
   const navigate = useNavigate();
   const [user, loading] = useAuthState(auth);
@@ -19,7 +20,7 @@ const UploadFiles = () => {
 
     uploadTask.on("state_changed", (snapshot)=>{
       const progress = (snapshot.bytesTransferred/snapshot.totalBytes) * 100;
-      console.log('Upload is '+ progress+"%")
+      // console.log('Upload is '+ progress+"%")
     });
     navigate("/home")
   };
@@ -37,19 +38,21 @@ const UploadFiles = () => {
         className="d-flex align-items-center justify-content-center"
         style={{ minHeight: "70vh" }}
       >
-        <Card className="shadow" style={{ width: "500px", borderRadius: "5%" }}>
+        <Card className="shadow" style={{ width: "500px", borderRadius: "1.5rem" }}>
           <Card.Body>
-            <h2 className="text-center  mb-4">Upload File</h2>
+            <h2 className="text-center  mb-4" style={myStyle}>Upload File</h2>
             <Form>
               <Form.Group>
                 <Form.Label>Select File</Form.Label>
                 <Form.Control
                   type="file"
                   onChange={(e) => setFile(e.target.files[0])}
+                  style={{borderRadius:"0.8rem"}} 
                   required
                 ></Form.Control>
               </Form.Group>
               <Button
+              variant="info" style={{color:"white", borderRadius:"0.8rem"}} 
                 className="w-100 mt-3"
                 onClick={(e) => {
                   e.preventDefault();

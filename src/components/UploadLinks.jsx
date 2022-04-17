@@ -5,6 +5,7 @@ import {auth,uploadLink} from "../firebase";
 import ReactNav from "./ReactNav";
 import {useAuthState} from 'react-firebase-hooks/auth';
 const UploadLinks = () => {
+  const myStyle ={"background":"-webkit-linear-gradient(#eee, rgb(2, 171, 244))","WebkitBackgroundClip":"text","WebkitTextFillColor":"transparent"}
   const [link, setLink] = useState("");
   const navigate = useNavigate();
   const [user, loading, error] = useAuthState(auth);
@@ -22,9 +23,9 @@ const UploadLinks = () => {
         className="d-flex align-items-center justify-content-center"
         style={{ minHeight: "70vh" }}
       >
-        <Card className="shadow" style={{width:"500px", borderRadius:"5%"}}>
+        <Card className="shadow" style={{width:"500px", borderRadius:"1.5rem"}}>
           <Card.Body>
-            <h2 className="text-center  mb-4">Upload Link</h2>
+            <h2 className="text-center  mb-4" style={myStyle}>Upload Link</h2>
             <Form>
               <Form.Group>
                 <Form.Label>Enter Link</Form.Label>
@@ -32,10 +33,11 @@ const UploadLinks = () => {
                   type="text"
                   onChange={(e) => setLink(e.target.value)}
                   placeholder="paste your url here"
+                  style={{borderRadius:"0.8rem"}} 
                   required
                 ></Form.Control>
               </Form.Group>
-              <Button className="w-100 mt-3" onClick={(e)=>{
+              <Button variant="info" style={{color:"white", borderRadius:"0.8rem"}} className="w-100 mt-3" onClick={(e)=>{
                 e.preventDefault()
                 uploadLink(user, link)
                 navigate('/home')

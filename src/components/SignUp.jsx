@@ -5,6 +5,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { auth, registerWithEmailAndPassword } from "../firebase";
 import { useAuthState } from "react-firebase-hooks/auth";
 import ReactNav1 from "./ReactNav1";
+import {AiOutlineMail,AiOutlineKey} from "react-icons/ai";
 const SignUp = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -13,9 +14,17 @@ const SignUp = () => {
   const [user, loading, error] = useAuthState(auth);
   const navigate = useNavigate();
   
+  const myStyle ={"background":"-webkit-linear-gradient(#eee, rgb(2, 171, 244))","WebkitBackgroundClip":"text","WebkitTextFillColor":"transparent"}
+  
   const register = (event) =>{
     event.preventDefault()
-    // if(!name) alert("Please enter name: ")
+    var re = /^(?=.*[0-9])(?=.[!@$%^&*~?])[a-zA-Z0-9!@#$%^&*~?]{8,15}/;
+    if(email=="") {
+      alert("Email Address field is empty: ");
+      return;
+    }else if(!password.match(re)){
+      alert("Password is in wrong format");
+    }
     
     registerWithEmailAndPassword(name, email, password)
   }
@@ -34,41 +43,33 @@ const SignUp = () => {
       <div className="w-100" style={{ maxWidth: "400px" }}>
         <Card className="shadow" style={{borderRadius:"4%"}}>
           <Card.Body>
-            <h2 className="text-center mb-4">Sign Up</h2>
+            <h2 className="text-center mb-4" style={myStyle}>Sign Up</h2>
             <Form>
               <Form.Group id="email">
-                <Form.Label>Email Address</Form.Label>
+                <Form.Label> <AiOutlineMail></AiOutlineMail> Email Address</Form.Label>
                 <Form.Control
                   type="email"
                   onChange={(event) =>{
                     setEmail(event.target.value);
                   }}
+                  style={{borderRadius:"0.8rem"}}
                   required
                 />
               </Form.Group>
-              <Form.Group id="password">
-                <Form.Label>Password</Form.Label>
+              <Form.Group id="password" className="mt-2">
+                <Form.Label><AiOutlineKey> </AiOutlineKey> Password</Form.Label>
                 <Form.Control
                   type="password"
                   onChange={(event) => {
                     setPassword(event.target.value);
                   }}
+                  style={{borderRadius:"0.8rem"}}
                   required
                 />
+                <span style={{fontSize:".8rem"}} className="mb-2">Enter Password of Minimum 8 digits with atleast one special symbel and number 
+              </span>
               </Form.Group>
-              
-                <Form.Group id="password-confirm">
-                  <Form.Label>Password Confirmation</Form.Label>
-                  <Form.Control
-                    type="password"
-                    onChange={(event) => {
-                      setCPassword(event.target.value);
-                    }}
-                    required
-                  />
-                </Form.Group>
-              
-              <Button className="w-100 mt-2" onClick={register} type="submit">
+              <Button variant="info" style={{color:"white", borderRadius:"0.8rem"}} className="w-100 mt-2" onClick={register} type="submit">
               Sign Up
               </Button>
             </Form>

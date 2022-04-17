@@ -1,0 +1,7 @@
+.btn{
+    border-radius: 1rem ;
+    background-color: aqua;
+}
+.btn:hover{
+    color: white;
+}

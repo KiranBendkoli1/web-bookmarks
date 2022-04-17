@@ -32,7 +32,7 @@ const ImageCard = (props) => {
     <>
       <Card
         className="col-lg-2 m-2"
-        style={{ height: "300px", width: "200px" }}
+        style={{ height: "18rem", width: "200px" }}
       >
         <Card.Img variant="top" src={url} />
         <Card.Body

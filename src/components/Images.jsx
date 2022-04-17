@@ -9,6 +9,7 @@ import { Container, Button, lightColors, darkColors } from "react-floating-actio
 import ReactNav from './ReactNav';
 
 const Images = () => {
+  const myStyle ={"background":"-webkit-linear-gradient(#eee, rgb(2, 171, 244))","WebkitBackgroundClip":"text","WebkitTextFillColor":"transparent"}  
   var uid;
   const [user, loading] =  useAuthState(auth);
   const [files,setFiles] = useState([]);
@@ -51,8 +52,9 @@ const Images = () => {
     <>
       <ReactNav />
       
-      <div className="container mt-5">
-        <div className="row">
+      <div className="container mt-3">
+      <h2 className='d-flex justify-content-center mb-3' style={myStyle}>Images Page</h2>
+        <div className="row d-flex justify-content-center">
         {
           files.map((data)=>{
             return <ImageCard data={data}/>
@@ -62,7 +64,7 @@ const Images = () => {
       </div>
       <Container>
       <Button
-        tooltip="Press this button to add links"
+        tooltip="Press this upload images"
         rotate={true}
         styles={{backgroundColor: darkColors.lighterBlue, color: lightColors.black}}
         onClick={() => navigate("/uimages")}

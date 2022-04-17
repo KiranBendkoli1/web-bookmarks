@@ -5,7 +5,10 @@ import { useAuthState } from "react-firebase-hooks/auth";
 import { useNavigate,Link } from "react-router-dom";
 
 const ReactNav = () => {
-    const [user, loading, error] = useAuthState(auth);
+
+  const myStyle ={"background":"-webkit-linear-gradient(#eee, rgb(2, 171, 244))","WebkitBackgroundClip":"text","WebkitTextFillColor":"transparent"}
+    
+  const [user, loading] = useAuthState(auth);
   const navigate = useNavigate();
   useEffect(() => {
     if (loading) return;
@@ -13,9 +16,9 @@ const ReactNav = () => {
   }, [user, loading]);
 
   return (
-    <Navbar  className="container shadow" bg="light" expand="lg" style={{borderRadius:"20px", marginTop:"10px", backgroundImage: "linear-gradient(to right, rgba(255,0,0,0),grey)"}}>
+    <Navbar  className="container shadow" bg="light" expand="lg" style={{borderRadius:"20px", marginTop:"10px", backgroundImage: "linear-gradient(to right, rgba(255,0,0,0),#dcdcdc)"}}>
       <Container>
-        <Navbar.Brand >Web Bookmarks </Navbar.Brand>
+        <Navbar.Brand style={myStyle} ><h3>Web Bookmarks</h3> </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
@@ -30,9 +33,10 @@ const ReactNav = () => {
           <Nav.Link>
             <button
               className="btn btn-info"
+              
               onClick={logout}
               type="submit"
-              style={{ borderRadius: "25px" }}
+              style={{ borderRadius: "1.2rem", color:"white" }}
             >
               Logout
             </button>

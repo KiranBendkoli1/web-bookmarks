@@ -8,6 +8,8 @@ import {IoMdAdd} from "react-icons/io";
 import { getDocs, collection, doc, deleteDoc} from "firebase/firestore";
 import { Container, Button, lightColors, darkColors } from "react-floating-action-button";
 const LinksPage = () => {
+  const myStyle ={"background":"-webkit-linear-gradient(#eee, rgb(2, 171, 244))","WebkitBackgroundClip":"text","WebkitTextFillColor":"transparent"}
+  
   var uid;
   const [user, loading, error] = useAuthState(auth);
   const navigate = useNavigate();
@@ -26,7 +28,7 @@ const LinksPage = () => {
     const querySnapshot = await getDocs(collection(db, "data" + uid));
     querySnapshot.forEach((doc) => {
       linksarr.push(doc);
-      console.log(doc)
+      // console.log(doc)
     });
     setLinks(linksarr);
   };
@@ -38,7 +40,8 @@ const LinksPage = () => {
     <>
       <ReactNav />
 
-      <div className="container mt-5">
+      <div className="container mt-3">
+      <h2 className='d-flex justify-content-center mb-3' style={myStyle}>Links Page</h2>
         {links.map((data) => {
           return <MyCard data={data} />;
         })}

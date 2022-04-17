@@ -15,7 +15,7 @@ const MyCard = (props) => {
   const navigate = useNavigate();
   const Collection = collectionName.slice(0, (collectionName.length-docName.length))
   var element;
-  console.log(url)
+  // console.log(url)
   const deleteData = (del)=>{
     deleteDoc(doc(db,Collection, docName)).then(()=>{
       alert("Link Deleted");
