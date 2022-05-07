@@ -3,7 +3,7 @@ import { Form, Button, Card, Container } from "react-bootstrap";
 import { Link, useNavigate } from "react-router-dom";
 import {useAuthState} from 'react-firebase-hooks/auth';
 import { auth, logInWithEmailAndPassword } from "../firebase";
-import ReactNav1 from "./ReactNav1";
+import ReactNav1 from "../auth/ReactNav1";
 import {AiOutlineMail,AiOutlineKey,AiOutlineLogin} from "react-icons/ai";
 const Login = () => {
   const [email, setEmail] = useState("");
