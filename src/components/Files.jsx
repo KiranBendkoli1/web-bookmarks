@@ -50,7 +50,7 @@ const Files = () => {
   }, [auth]);
 
   return (
-    <>
+    <div style={{"height":"100vh"}}>
       <ReactNav />
       
       <div className="container mt-3">
@@ -71,7 +71,7 @@ const Files = () => {
         <IoMdAdd />
       </Button>
     </Container>
-    </>
+    </div>
   )
 }
 

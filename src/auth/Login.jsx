@@ -27,15 +27,15 @@ const Login = () => {
     <ReactNav1 />
     <Container
       className="d-flex align-items-center justify-content-center"
-      style={{ minHeight: "90vh" }}
+      style={{ minHeight: "100vh" }}
     >
       <div className="w-100" style={{ maxWidth: "400px" }}>
-        <Card className="shadow" style={{borderRadius:"4%"}}>
+        <Card className="shadow" style={{borderRadius:"0.8rem", backgroundImage: "linear-gradient(to right, rgba(255,0,0,0),#dcdcdc)"}}>
           <Card.Body>
             <h2 className="text-center mb-4" style={myStyle}>Sign In</h2>
             <Form>
               <Form.Group id="email">
-                <Form.Label><AiOutlineMail></AiOutlineMail> Email Address</Form.Label>
+                <Form.Label> Email Address</Form.Label>
                 <Form.Control
                   type="email"
                   onChange={(e) => {
@@ -46,7 +46,7 @@ const Login = () => {
                 />
               </Form.Group>
               <Form.Group id="password">
-                <Form.Label><AiOutlineKey></AiOutlineKey> Password</Form.Label>
+                <Form.Label> Password</Form.Label>
                 <Form.Control
                   type="password"
                   onChange={(e) => {
@@ -68,7 +68,7 @@ const Login = () => {
                 }
                 logInWithEmailAndPassword(email, password)
               }} type="submit"> 
-              Sign In  <AiOutlineLogin></AiOutlineLogin>
+              Sign In 
               </Button>
             </Form>
             <div className="w-100 text-center mt-3">Don't have an account? <Link exact to='/signup'>Sign Up</Link> </div>

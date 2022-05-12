@@ -16,7 +16,7 @@ const ReactNav = () => {
   }, [user, loading]);
 
   return (
-    <Navbar  className="container shadow" bg="light" expand="lg" style={{borderRadius:"20px", marginTop:"10px", backgroundImage: "linear-gradient(to right, rgba(255,0,0,0),#dcdcdc)"}}>
+    <Navbar  className="container shadow" bg="light" expand="lg" style={{borderRadius:"0.8rem", backgroundImage: "linear-gradient(to right, rgba(255,0,0,0),#dcdcdc)"}}>
       <Container>
         <Navbar.Brand style={myStyle} ><h3>Web Bookmarks</h3> </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />

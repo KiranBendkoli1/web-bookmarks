@@ -17,13 +17,13 @@ const UploadLinks = () => {
   },[user, loading])
 
   return (
-    <>
+    <div style={{"height":"100vh"}}>
       <ReactNav />
       <Container
         className="d-flex align-items-center justify-content-center"
         style={{ minHeight: "70vh" }}
       >
-        <Card className="shadow" style={{width:"500px", borderRadius:"1.5rem"}}>
+        <Card className="shadow" style={{width:"500px", borderRadius:"0.8rem", backgroundImage: "linear-gradient(to right, rgba(255,0,0,0),#dcdcdc)"}}>
           <Card.Body>
             <h2 className="text-center  mb-4" style={myStyle}>Upload Link</h2>
             <Form>
@@ -48,7 +48,7 @@ const UploadLinks = () => {
           </Card.Body>
         </Card>
       </Container>
-    </>
+    </div>
   );
 };
 

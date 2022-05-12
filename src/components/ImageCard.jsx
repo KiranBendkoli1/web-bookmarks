@@ -32,7 +32,7 @@ const ImageCard = (props) => {
     <>
       <Card
         className="col-lg-2 m-2"
-        style={{ height: "18rem", width: "200px" }}
+        style={{ height: "18rem", width: "200px",borderRadius:"0.8rem", backgroundImage: "linear-gradient(to right, rgba(255,0,0,0),#dcdcdc)" }}
       >
         <Card.Img variant="top" src={url} />
         <Card.Body

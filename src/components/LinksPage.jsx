@@ -37,7 +37,7 @@ const LinksPage = () => {
   }, []);
 
   return (
-    <>
+    <div style={{"height":"100vh"}}>
       <ReactNav />
 
       <div className="container mt-3">
@@ -56,7 +56,7 @@ const LinksPage = () => {
         <IoMdAdd />
       </Button>
     </Container>
-    </>
+    </div>
   );
 };
 

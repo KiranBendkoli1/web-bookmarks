@@ -29,14 +29,13 @@ const FileCard = (props) => {
 
   return (
     <>
-      <Card className="shadow m-2" style={{borderRadius:"15px"}}>
+      <Card className="shadow m-2" style={{borderRadius:"0.8rem", backgroundImage: "linear-gradient(to right, rgba(255,0,0,0),#dcdcdc)"}}>
       <Card.Body className='align-text-center' style={{display:"flex", justifyContent:"space-between"}}>
             <p>{data.name}</p>
             <div>
             <a href={url} className="btn btn-sm btn-outline-primary" style={{borderRadius:"15px"}} target="_blank" download><BsDownload /></a>
             <a onClick={()=>deleteFile(data)} className="btn btn-sm btn-outline-danger" style={{borderRadius:"15px"}}><MdDeleteOutline/></a>
             </div>
-
         </Card.Body>
       </Card>
     </>

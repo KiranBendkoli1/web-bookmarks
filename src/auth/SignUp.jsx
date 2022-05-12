@@ -5,7 +5,6 @@ import { Link, useNavigate } from "react-router-dom";
 import { auth, registerWithEmailAndPassword } from "../firebase";
 import { useAuthState } from "react-firebase-hooks/auth";
 import ReactNav1 from "./ReactNav1";
-import {AiOutlineMail,AiOutlineKey} from "react-icons/ai";
 const SignUp = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -38,15 +37,15 @@ const SignUp = () => {
     <ReactNav1 />
     <Container
       className="d-flex align-items-center justify-content-center"
-      style={{ minHeight: "90vh" }}
+      style={{ minHeight: "100vh" }}
     >
       <div className="w-100" style={{ maxWidth: "400px" }}>
-        <Card className="shadow" style={{borderRadius:"4%"}}>
+        <Card className="shadow" style={{borderRadius:"0.8rem", backgroundImage: "linear-gradient(to right, rgba(255,0,0,0),#dcdcdc)"}}>
           <Card.Body>
             <h2 className="text-center mb-4" style={myStyle}>Sign Up</h2>
             <Form>
               <Form.Group id="email">
-                <Form.Label> <AiOutlineMail></AiOutlineMail> Email Address</Form.Label>
+                <Form.Label>  Email Address</Form.Label>
                 <Form.Control
                   type="email"
                   onChange={(event) =>{
@@ -57,7 +56,7 @@ const SignUp = () => {
                 />
               </Form.Group>
               <Form.Group id="password" className="mt-2">
-                <Form.Label><AiOutlineKey> </AiOutlineKey> Password</Form.Label>
+                <Form.Label> Password</Form.Label>
                 <Form.Control
                   type="password"
                   onChange={(event) => {

@@ -1,21 +1,20 @@
 import React from "react";
 import ReactNav from "./ReactNav";
-// import Nav from "./Nav";
 import {Card, Button, Container} from "react-bootstrap"
 import {BsImageFill} from "react-icons/bs"
 import { Link } from "react-router-dom";
 import {AiOutlineLink,AiFillFilePdf} from "react-icons/ai"
 const HomePage = () => {
-  const myStyle ={"background":"-webkit-linear-gradient(#eee, rgb(2, 171, 244))","WebkitBackgroundClip":"text","WebkitTextFillColor":"transparent"}
-   
+  const myStyle ={"background":"-webkit-linear-gradient(#eee, #252729)","WebkitBackgroundClip":"text","WebkitTextFillColor":"transparent"}
+
   return (
-    <>
+    <div style={{"height":"100vh"}}>
       <ReactNav />
       {/* <Nav /> */}
-      <Container>
+      <Container style={{marginTop:"3npm startrem"}}>
       <div className="row d-flex justify-content-center">
-        <Card  className="col-md-4 shadow" style={{ width: "18rem", margin:"10px",borderRadius:"20px"  }}>
-          <AiOutlineLink  style={{width:"50px", height:"50px",color:"blue"}}/>
+        <Card  className="col-md-4  shadow" style={{width: "18rem", margin:"10px",borderRadius:"0.8rem", backgroundImage: "linear-gradient(to right, rgba(255,0,0,0),#dcdcdc)"  }}>
+          <AiOutlineLink  style={{ width:"50px", height:"50px",color:"blue"}}/>
           <Card.Body>
             <Card.Title  style={myStyle} >Links</Card.Title>
             <Card.Text>
@@ -24,7 +23,7 @@ const HomePage = () => {
             <Button variant="info" style={{borderRadius:"1rem"}}><Link exact to="/links" style={{color:"white", textDecoration:"none"}}>Go To Links</Link></Button>
           </Card.Body>
         </Card>
-        <Card className="col-md-4 shadow"  style={{ width: "18rem", margin:"10px",borderRadius:"20px" }}>
+        <Card className="col-md-4 shadow"  style={{ width: "18rem", margin:"10px",borderRadius:"0.8rem", backgroundImage: "linear-gradient(to right, rgba(255,0,0,0),#dcdcdc)" }}>
         <AiFillFilePdf style={{width:"50px", height:"50px",color:"red"}}/>
           <Card.Body>
             <Card.Title style={myStyle} >Documents</Card.Title>
@@ -34,7 +33,7 @@ const HomePage = () => {
             <Button variant="info" style={{borderRadius:"1rem"}}><Link exact to="/docs" style={{color:"white", textDecoration:"none"}}>Go To Docs</Link></Button>
           </Card.Body>
         </Card>
-        <Card className="col-md-4 shadow"  style={{ width: "18rem", margin:"10px",borderRadius:"20px" }}>
+        <Card className="col-md-4 shadow"  style={{ width: "18rem", margin:"10px",borderRadius:"0.8rem", backgroundImage: "linear-gradient(to right, rgba(255,0,0,0),#dcdcdc)" }}>
         <BsImageFill style={{width:"50px", height:"50px",color:"violet"}}/>
           <Card.Body>
             <Card.Title style={myStyle} >Images</Card.Title>
@@ -46,7 +45,7 @@ const HomePage = () => {
         </Card>
       </div>
       </Container>
-    </>
+    </div>
   );
 };
 

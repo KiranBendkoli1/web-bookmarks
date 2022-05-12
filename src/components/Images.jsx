@@ -49,7 +49,7 @@ const Images = () => {
   }, [auth]);
 
   return (
-    <>
+    <div style={{"height":"100vh"}}>
       <ReactNav />
       
       <div className="container mt-3">
@@ -72,7 +72,7 @@ const Images = () => {
         <IoMdAdd />
       </Button>
     </Container>
-    </>
+    </div>
   )
 }
 

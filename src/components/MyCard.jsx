@@ -24,7 +24,7 @@ const MyCard = (props) => {
   }
   return (
     <>
-    <Card className="shadow m-2" style={{borderRadius:"15px"}}>
+    <Card className="shadow m-2" style={{borderRadius:"0.8rem", backgroundImage: "linear-gradient(to right, rgba(255,0,0,0),#dcdcdc)"}}>
       <Card.Body className='align-text-center' style={{display:"flex", justifyContent:"space-between"}}>
         <div> {url}</div>
 

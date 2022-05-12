@@ -14,10 +14,11 @@ import LinksPage from "./LinksPage";
 import "./App.css";
 
 function App() {
+
   return (
-    <div className="App">
+    <div className="App" style={{"backgroundImage":"linear-gradient(grey, #707070)"}}>
       <Router>
-        <Routes>
+        <Routes  >
           <Route exact path="/" element={<Login />} />
           <Route exact path="/signup" element={<SignUp />} />
           <Route exact path="/home" element={<HomePage />} />

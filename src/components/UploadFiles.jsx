@@ -32,13 +32,13 @@ const UploadFiles = () => {
     if (!user) return navigate("/");
   }, [user, loading]);
   return (
-    <>
+    <div style={{"height":"100vh"}}>
       <ReactNav />
       <Container
         className="d-flex align-items-center justify-content-center"
         style={{ minHeight: "70vh" }}
       >
-        <Card className="shadow" style={{ width: "500px", borderRadius: "1.5rem" }}>
+        <Card className="shadow" style={{ width: "500px", borderRadius: "1.5rem",borderRadius:"0.8rem", backgroundImage: "linear-gradient(to right, rgba(255,0,0,0),#dcdcdc)" }}>
           <Card.Body>
             <h2 className="text-center  mb-4" style={myStyle}>Upload File</h2>
             <Form>
@@ -67,7 +67,7 @@ const UploadFiles = () => {
           </Card.Body>
         </Card>
       </Container>
-    </>
+    </div>
   );
 };
 
